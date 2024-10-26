@@ -1,5 +1,5 @@
 function showAlert() {
-        alert("That Currently Servers are off");
+        alert("Try Again Later, Currently Servers are off");
     }
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
