@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Description -->
+        <meta name="description" content="Welcome to the portfolio of Poonam Kshatriya, a passionate Full Stack Developer showcasing skills in HTML, CSS, JavaScript, and more. Explore my projects and contact me for collaboration.">
+
+        <!-- Keywords -->
+        <meta name="keywords" content="Full Stack Developer, HTML, CSS, JavaScript, Portfolio, Web Development, Projects, Contact, Poonam Kshatriya">
+    
+        <!-- Author -->
+        <meta name="author" content="Poonam Kshatriya">
+    
+        <!-- Open Graph Tags for Social Media -->
+        <meta property="og:title" content="Poonam Kshatriya | Full Stack Developer Portfolio">
+        <meta property="og:description" content="Explore my portfolio and projects as a Full Stack Developer.">
+        <meta property="og:image" content="URL_to_an_image"> <!-- Replace with an image URL -->
+        <meta property="og:url" content="Your_Portfolio_URL"> <!-- Replace with your portfolio URL -->
+        <meta property="og:type" content="website">
+    
+        <!-- Twitter Card Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Poonam Kshatriya | Full Stack Developer Portfolio">
+        <meta name="twitter:description" content="Explore my portfolio and projects as a Full Stack Developer.">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/show-hint.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid" style="background: rgb(0,245,255);
+background: linear-gradient(153deg, rgba(0,245,255,1) 33%, rgba(238,155,155,1) 65%);">
+          <div class="navbar-header" >
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="#" style="color: rgb(0, 0, 0);">Poonam Kshatriya</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="#" style="color: rgb(255, 255, 255);">Home</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: rgb(255, 255, 255);" >Blogs<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li class="active"><a href="#" style="color: rgb(255, 255, 255);">|Future Projects</a></li>
+                  <li><a href="#" style="color: rgb(255, 255, 255);">|Past Projects</a></li>
+                  <li><a href="#" style="color: rgb(255, 255, 255);">|Tech News</a></li>
+                </ul>
+              </li>
+              <li><a href="#" style="color: rgb(255, 255, 255);">| Latest Project Demo</a></li>
+              <li><a href="#contact" style="color: rgb(255, 255, 255);" >| Contact Me</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <p class="nav-item">
+                    <a class="nav-link" href="#" onclick="showAlert()"><span class="glyphicon glyphicon-user"></span> | Sign Up</a>
+                </p>
+                <p class="nav-item">
+                    <a class="nav-link" href="#" onclick="showAlert()"><span class="glyphicon glyphicon-log-in"></span> | Login</a>
+                </p>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Floating Action Button (FAB) and Quick Links -->
+<div class="fab-container">
+    <button class="fab-main">
+        <i class="fas fa-plus"></i>
+    </button>
+    <div class="fab-links">
+        <a href="#home" class="fab-link" title="Home"><i class="fas fa-home"></i></a>
+        <a href="#about" class="fab-link" title="About Me"><i class="fas fa-user"></i></a>
+        <a href="#projects" class="fab-link" title="Projects"><i class="fas fa-briefcase"></i></a>
+        <a href="#contact" class="fab-link" title="Contact"><i class="fas fa-envelope"></i></a>
+    </div>
+</div>
+
+      <div class="jumbotron text-center" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: #fff; padding: 80px 20px; border-radius: 12px; position: relative; overflow: hidden;">
+        <!-- Background animation circles -->
+        <div class="floating-circles">
+            <div class="circle" style="top: 20%; left: 10%;"></div>
+            <div class="circle" style="top: 50%; left: 75%;"></div>
+            <div class="circle" style="top: 70%; left: 30%;"></div>
+        </div>
+    
+        <!-- Welcome Title -->
+        <h1 style="font-size: 3rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">
+            Welcome to My Blogs!
+        </h1>
+    
+        <!-- Animated Subheading -->
+        <h2 style="font-size: 1.8rem; margin-top: 15px; color: #ffeb3b; font-weight: 400; animation: fadeIn 2s ease-in-out;">
+            Elevating Digital Experiences
+        </h2>
+    
+        <!-- Introduction -->
+       
+        <p style="font-size: 1.2rem; margin-top: 10px;">
+            Whether building responsive user interfaces or developing seamless back-end systems, I focus on combining functionality and design.
+        </p>
+    
+        <!-- Call to Action Button -->
+        <a href="#projects" class="btn btn-outline-light btn-lg mt-4" style="border-radius: 30px; padding: 12px 30px;color: #fff; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
+            View My <u>Work</u>
+        </a>
+    </div>
+
+<hr>
+
+
+<header class="blog-header">
+    <h1 class="blog-title">My Blog</h1>
+    <p>Insights, tutorials, and stories from my journey as a Full Stack Developer</p>
+</header>
+
+<header class="blog-header">
+    <h1 class="blog-title">My Blog</h1>
+    <p>Insights, tutorials, and stories from my journey as a Full Stack Developer</p>
+</header>
+
+<div class="container mt-5">
+    <!-- Blog Post 1 -->
+    <div class="blog-post">
+        <img src="https://via.placeholder.com/800x400?text=JavaScript+Closures" alt="JavaScript Closures" class="post-image">
+        <h2 class="post-title">Understanding JavaScript Closures</h2>
+        <p class="post-date">Published on October 10, 2024</p>
+        <div class="post-content">
+            <p>Closures are a fundamental concept in JavaScript. They allow functions to have access to their outer scope, even after the outer function has returned. This enables powerful programming patterns such as data encapsulation, function factories, and more. In this blog post, we'll dive deeper into how closures work, practical examples of their usage, and best practices to keep in mind when using them.</p>
+        </div>
+    </div>
+
+    <!-- Blog Post 2 -->
+    <div class="blog-post">
+        <img src="https://via.placeholder.com/800x400?text=React+Hooks" alt="Exploring React Hooks" class="post-image">
+        <h2 class="post-title">Exploring React Hooks</h2>
+        <p class="post-date">Published on October 17, 2024</p>
+        <div class="post-content">
+            <p>React Hooks are a game-changer for functional components. They allow developers to manage state and side effects in a simpler way than traditional class components. In this post, we'll explore useState, useEffect, and custom hooks, and how they can simplify your code and enhance component reusability. We'll also cover some common pitfalls and how to avoid them.</p>
+        </div>
+    </div>
+
+    <!-- Blog Post 3 -->
+    <div class="blog-post">
+        <img src="https://via.placeholder.com/800x400?text=Node.js" alt="Getting Started with Node.js" class="post-image">
+        <h2 class="post-title">Getting Started with Node.js</h2>
+        <p class="post-date">Published on October 24, 2024</p>
+        <div class="post-content">
+            <p>Node.js allows developers to run JavaScript on the server. It's built on the V8 JavaScript engine and is great for building scalable network applications. In this blog, we'll set up a basic Node.js application, explore its event-driven architecture, and look at some popular frameworks like Express.js. Whether you're new to Node.js or looking to deepen your knowledge, this guide will help you get started.</p>
+        </div>
+    </div>
+
+    <!-- Blog Post 4 -->
+    <div class="blog-post">
+        <img src="https://via.placeholder.com/800x400?text=CSS+Grid+vs+Flexbox" alt="CSS Grid vs. Flexbox" class="post-image">
+        <h2 class="post-title">CSS Grid vs. Flexbox: When to Use What</h2>
+        <p class="post-date">Published on October 31, 2024</p>
+        <div class="post-content">
+            <p>CSS Grid and Flexbox are both powerful layout systems. Understanding their differences can help you decide which one to use for your web design needs. This post compares the strengths and weaknesses of each system, providing examples to illustrate when to use Grid for two-dimensional layouts and when to use Flexbox for one-dimensional layouts. By the end of this article, you'll have a clear understanding of how to apply these techniques effectively.</p>
+        </div>
+    </div>
+
+    <!-- Blog Post 5 -->
+    <div class="blog-post">
+        <img src="https://via.placeholder.com/800x400?text=Web+Security" alt="Securing Your Web Applications" class="post-image">
+        <h2 class="post-title">Securing Your Web Applications</h2>
+        <p class="post-date">Published on November 7, 2024</p>
+        <div class="post-content">
+            <p>Security is paramount in web development. From SQL injection to cross-site scripting, understanding these vulnerabilities is essential for building secure applications. In this article, we'll discuss common security threats and how to mitigate them using best practices such as input validation, authentication, and encryption. You'll learn how to audit your applications for security vulnerabilities and ensure they remain protected.</p>
+        </div>
+    </div>
+
+    <!-- Blog Post 6 -->
+    <div class="blog-post">
+        <img src="https://via.placeholder.com/800x400?text=Version+Control" alt="The Importance of Version Control" class="post-image">
+        <h2 class="post-title">The Importance of Version Control</h2>
+        <p class="post-date">Published on November 14, 2024</p>
+        <div class="post-content">
+            <p>Version control systems like Git are vital for managing changes to your codebase. They allow multiple developers to work on the same project without conflicts, and they enable you to track and revert changes if necessary. In this post, we'll cover the fundamental concepts of Git, how to set it up, and best practices for committing code. You'll also learn how to collaborate effectively with your team using branches and pull requests.</p>
+        </div>
+    </div>
+
+    <!-- Blog Post 7 -->
+    <div class="blog-post">
+        <img src="https://via.placeholder.com/800x400?text=Building+RESTful+APIs" alt="Building RESTful APIs with Express" class="post-image">
+        <h2 class="post-title">Building RESTful APIs with Express</h2>
+        <p class="post-date">Published on November 21, 2024</p>
+        <div class="post-content">
+            <p>Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for building web and mobile applications. In this post, we'll explore how to create RESTful APIs with Express, covering topics like routing, middleware, and error handling. We will also touch on how to structure your application for maintainability and scalability. By the end of this guide, you'll be equipped to build your own APIs effectively.</p>
+        </div>
+    </div>
+
+    <!-- Blog Post 8 -->
+    <div class="blog-post">
+        <img src="https://via.placeholder.com/800x400?text=Intel+Core+Ultra" alt="Intel Core Ultra Release" class="post-image">
+        <h2 class="post-title">Intel Core Ultra: A New Era of Processing Power</h2>
+        <p class="post-date">Published on November 28, 2024</p>
+        <div class="post-content">
+            <p>The recent release of Intel's Core Ultra processors marks a significant leap in computing performance. These new chips are designed to handle demanding workloads and improve efficiency, making them ideal for both gamers and professionals. Featuring advanced architecture and enhanced AI capabilities, the Core Ultra processors promise to redefine multitasking and computational tasks. In this blog post, we’ll discuss the key features of the Intel Core Ultra series, performance benchmarks, and how they compare to previous generations, enabling you to make informed decisions for your next upgrade.</p>
+        </div>
+    </div>
+</div>
+
+
+
+<hr><footer style="background-color: rgba(255, 0, 0, 0.298);" class="footer bg-dark text-white py-4">
+    <div class="container text-center">
+        <h5 class="mb-3" style="color: gold;">Connect with Me</h5>
+        <div class="social-icons mb-3">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-white mx-2">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://github.com/yourprofile" target="_blank" class="text-white mx-2">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank" class="text-white mx-2">
+                <i class="fab fa-twitter fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank" class="text-white mx-2">
+                <i class="fab fa-instagram fa-2x"></i>
+            </a>
+        </div>
+
+        <div class="map-container mb-4">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.10140514564!2d139.69170631525834!3d35.68948792410527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd8b84f5a6d%3A0x374458ad845aa032!2sTokyo%20Tower!5e0!3m2!1sen!2sjp!4v1628947694008!5m2!1sen!2sjp" 
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="container my-5" id="contact">
+            <h2 class="text-center mb-4" style="color: #c6fd00;">Contact Me</h2>
+            <p class="text-center mb-5" style="color: #ffffff; font-size: 1.1rem;">
+                I would love to hear from you! Feel free to reach out via email or find me at my location in Tokyo.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6 mb-4 contact-container" >
+                    <h5>Get in Touch</h5>
+                    <form onsubmit="sendEmail(event)">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <p class="mb-0" style="font-size: 0.9rem;">© 2024 Poonam Kshatriya. All Rights Reserved.</p>
+        <p style="font-size: 0.9rem;">Passionate Full Stack Developer | Exploring the world of technology.</p>
+    </div>
+</footer>
+
+      
+<script type="text/javascript" src = "index.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- JavaScript to Handle Code Execution and CodeMirror Initialization -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/xml/xml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/show-hint.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/html-hint.min.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</body>
+</html>

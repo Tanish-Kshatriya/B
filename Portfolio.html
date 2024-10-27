@@ -3,13 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Description -->
+        <meta name="description" content="Welcome to the portfolio of Poonam Kshatriya, a passionate Full Stack Developer showcasing skills in HTML, CSS, JavaScript, and more. Explore my projects and contact me for collaboration.">
+
+        <!-- Keywords -->
+        <meta name="keywords" content="Full Stack Developer, HTML, CSS, JavaScript, Portfolio, Web Development, Projects, Contact, Poonam Kshatriya">
+    
+        <!-- Author -->
+        <meta name="author" content="Poonam Kshatriya">
+    
+        <!-- Open Graph Tags for Social Media -->
+        <meta property="og:title" content="Poonam Kshatriya | Full Stack Developer Portfolio">
+        <meta property="og:description" content="Explore my portfolio and projects as a Full Stack Developer.">
+        <meta property="og:image" content="URL_to_an_image"> <!-- Replace with an image URL -->
+        <meta property="og:url" content="Your_Portfolio_URL"> <!-- Replace with your portfolio URL -->
+        <meta property="og:type" content="website">
+    
+        <!-- Twitter Card Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Poonam Kshatriya | Full Stack Developer Portfolio">
+        <meta name="twitter:description" content="Explore my portfolio and projects as a Full Stack Developer.">
 
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="Style0.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/show-hint.min.css">
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -29,25 +51,38 @@ background: linear-gradient(153deg, rgba(0,245,255,1) 33%, rgba(238,155,155,1) 6
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: rgb(255, 255, 255);">Blogs<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#" style="color: rgb(255, 255, 255);">Tech Blogs</a></li>
-                  <li><a href="#" style="color: rgb(255, 255, 255);">New Projects</a></li>
-                  <li><a href="#" style="color: rgb(255, 255, 255);">Web Tips</a></li>
+                  <li><a href="#" style="color: rgb(255, 255, 255);">|Future Projects</a></li>
+                  <li><a href="#" style="color: rgb(255, 255, 255);">|Past Projects</a></li>
+                  <li><a href="#" style="color: rgb(255, 255, 255);">|Tech News</a></li>
                 </ul>
               </li>
-              <li><a href="#" style="color: rgb(255, 255, 255);">Testimonials and Clients</a></li>
+              <li><a href="#" style="color: rgb(255, 255, 255);">| Latest Project Demo</a></li>
+              <li><a href="#contact" style="color: rgb(255, 255, 255);" >| Contact Me</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <p class="nav-item">
-                    <a class="nav-link" href="#" onclick="showAlert()"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                    <a class="nav-link" href="#" onclick="showAlert()"><span class="glyphicon glyphicon-user"></span> | Sign Up</a>
                 </p>
                 <p class="nav-item">
-                    <a class="nav-link" href="#" onclick="showAlert()"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    <a class="nav-link" href="#" onclick="showAlert()"><span class="glyphicon glyphicon-log-in"></span> | Login</a>
                 </p>
             </ul>
           </div>
         </div>
       </nav>
-      
+      <!-- Floating Action Button (FAB) and Quick Links -->
+<div class="fab-container">
+    <button class="fab-main">
+        <i class="fas fa-plus"></i>
+    </button>
+    <div class="fab-links">
+        <a href="#home" class="fab-link" title="Home"><i class="fas fa-home"></i></a>
+        <a href="#about" class="fab-link" title="About Me"><i class="fas fa-user"></i></a>
+        <a href="#projects" class="fab-link" title="Projects"><i class="fas fa-briefcase"></i></a>
+        <a href="#contact" class="fab-link" title="Contact"><i class="fas fa-envelope"></i></a>
+    </div>
+</div>
+
       <div class="jumbotron text-center" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: #fff; padding: 80px 20px; border-radius: 12px; position: relative; overflow: hidden;">
         <!-- Background animation circles -->
         <div class="floating-circles">
@@ -75,12 +110,12 @@ background: linear-gradient(153deg, rgba(0,245,255,1) 33%, rgba(238,155,155,1) 6
         </p>
     
         <!-- Call to Action Button -->
-        <a href="Clients.html#Projects" class="btn btn-outline-light btn-lg mt-4" style="border-radius: 30px; padding: 12px 30px;color: #fff; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
+        <a href="#projects" class="btn btn-outline-light btn-lg mt-4" style="border-radius: 30px; padding: 12px 30px;color: #fff; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
             View My <u>Work</u>
         </a>
     </div>
 
-
+<hr>
 
     <!-- About Me Section -->
 <section class="about-me-section py-5" style="background: linear-gradient(135deg, #f7e4a9, #f2c94c);">
@@ -189,14 +224,14 @@ background: linear-gradient(153deg, rgba(0,245,255,1) 33%, rgba(238,155,155,1) 6
                     <i class="fas fa-laptop-code" style="color: #00ff73; font-size: 2.5rem;"></i>
                 </div>
                 <div class="card-body text-center">
-                    <h5 class="card-title" style="color: #ffd700; font-weight: bold;">Windows 11 Development</h5>
+                    <h5 class="card-title" style="color: #ffd700; font-weight: bold;">Win 11 Desktop Interface</h5>
                     <p class="card-text" style="color: #ffffff;">
-                        As previously I had worked with Microsoft and at that time I was raised as the chief MMP Developer
+                        As a Chief Developer at Microsoft, I led the team in creating a modern Windows 11-inspired desktop interface with responsive design and smooth animations.
                     </p>
                 </div>
             </div>
         </div>
-
+        
         <!-- Project 2 -->
         <div class="col-md-4 mb-4">
             <div class="card shadow-lg project-card" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
@@ -206,12 +241,12 @@ background: linear-gradient(153deg, rgba(0,245,255,1) 33%, rgba(238,155,155,1) 6
                 <div class="card-body text-center">
                     <h5 class="card-title" style="color: #ffd700; font-weight: bold;">AI Chatbot Integration</h5>
                     <p class="card-text" style="color: #ffffff;">
-                        Designed an AI chatbot using machine learning to enhance user engagement and interactions.
+                        Developed an advanced AI chatbot using machine learning techniques, enhancing user engagement during my tenure as Chief Developer at Microsoft.
                     </p>
                 </div>
             </div>
         </div>
-
+        
         <!-- Project 3 -->
         <div class="col-md-4 mb-4">
             <div class="card shadow-lg project-card" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
@@ -221,14 +256,12 @@ background: linear-gradient(153deg, rgba(0,245,255,1) 33%, rgba(238,155,155,1) 6
                 <div class="card-body text-center">
                     <h5 class="card-title" style="color: #ffd700; font-weight: bold;">Real-Time Data Analytics</h5>
                     <p class="card-text" style="color: #ffffff;font-weight: bolder;">
-                        Built a tool for real-time data visualization with dynamic insights and analytics capabilities.
+                        As Chief Developer at Microsoft, I built a powerful tool for real-time data visualization with dynamic insights and analytics capabilities.
                     </p>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
+        
 
 
     <section id="skills" class="py-5">
@@ -243,145 +276,241 @@ background: linear-gradient(153deg, rgba(0,245,255,1) 33%, rgba(238,155,155,1) 6
                             <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <div class="progress-bar video-progress" style="width: 100%;background-color: rgba(218, 100, 32, 0.781);" data-skill="HTML 90%"></div>
+                        <div class="progress-bar video-progress" style="width: 90%;background-color: rgba(218, 100, 32, 0.781);" data-skill="HTML 90%"></div>
                     </div>
                     <div class="progress mb-3 position-relative">
                         <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
                             <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <div class="progress-bar video-progress" style="width: 85%;background-color: rgba(218, 100, 32, 0.781);" data-skill="CSS 85%"></div>
+                        <div class="progress-bar video-progress" style="width: 90%;background-color: rgba(218, 100, 32, 0.781);" data-skill="CSS 90%"></div>
                     </div>
                     <div class="progress mb-3 position-relative">
                         <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
                             <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <div class="progress-bar video-progress" style="width: 80%;background-color: rgba(218, 100, 32, 0.781);" data-skill="JavaScript 80%"></div>
+                        <div class="progress-bar video-progress" style="width: 90%;background-color: rgba(218, 100, 32, 0.781);" data-skill="JavaScript 90%"></div>
                     </div>
                     <div class="progress mb-3 position-relative">
                         <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
                             <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <div class="progress-bar video-progress" style="width: 75%;background-color: rgba(218, 100, 32, 0.781);" data-skill="React 75%"></div>
+                        <div class="progress-bar video-progress" style="width: 85%;background-color: rgba(218, 100, 32, 0.781);" data-skill="React 85%"></div>
                     </div>
                     <div class="progress mb-3 position-relative">
                         <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
                             <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <div class="progress-bar video-progress" style="width: 70%;background-color: rgba(218, 100, 32, 0.781);" data-skill="Bootstrap 70%"></div>
+                        <div class="progress-bar video-progress" style="width: 90%;background-color: rgba(218, 100, 32, 0.781);" data-skill="Bootstrap 90%"></div>
                     </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <h5 style="color: #ffffff;font-size: 15px;">Backend Development</h5>
-                    <div class="progress mb-3 position-relative">
-                        <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-                            <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="progress-bar video-progress" style="width: 80%;background-color: rgba(218, 100, 32, 0.781);" data-skill="Node.js 80%"></div>
                     </div>
-                    <div class="progress mb-3 position-relative">
-                        <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-                            <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="progress-bar video-progress" style="width: 75%;background-color: rgba(218, 100, 32, 0.781);" data-skill="Express 75%"></div>
-                    </div>
-                    <div class="progress mb-3 position-relative">
-                        <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-                            <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="progress-bar video-progress" style="width: 70%;background-color: rgba(218, 100, 32, 0.781);" data-skill="PHP 70%"></div>
-                    </div>
-                    <div class="progress mb-3 position-relative">
-                        <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-                            <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="progress-bar video-progress" style="width: 65%;background-color: rgba(218, 100, 32, 0.781);" data-skill="MySQL 65%"></div>
-                    </div>
-                    <div class="progress mb-3 position-relative">
-                        <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-                            <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="progress-bar video-progress" style="width: 60%;background-color: rgba(218, 100, 32, 0.781);" data-skill="MongoDB 60%"></div>
-                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5 style="color: #ffffff;font-size: 15px;">Backend Development</h5>
+                        <div class="progress mb-3 position-relative">
+                            <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+                                <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="progress-bar video-progress" style="width: 90%;background-color: rgba(218, 100, 32, 0.781);" data-skill="Node.js 90%"></div>
+                        </div>
+                        <div class="progress mb-3 position-relative">
+                            <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+                                <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="progress-bar video-progress" style="width: 85%;background-color: rgba(218, 100, 32, 0.781);" data-skill="Express 85%"></div>
+                        </div>
+                        <div class="progress mb-3 position-relative">
+                            <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+                                <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="progress-bar video-progress" style="width: 98%;background-color: rgba(218, 100, 32, 0.781);" data-skill="PHP 98%"></div>
+                        </div>
+                        <div class="progress mb-3 position-relative">
+                            <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+                                <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="progress-bar video-progress" style="width: 96%;background-color: rgba(218, 100, 32, 0.781);" data-skill="MySQL 96%"></div>
+                        </div>
+                        <div class="progress mb-3 position-relative">
+                            <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+                                <source src="https://media.istockphoto.com/id/1648403133/video/liquid-gold-flowing-seamless-slow-motion-looped-melted-golden-metal-waving-on-black-3d.mp4?s=mp4-640x640-is&k=20&c=thCxRDceTqA3jXhUiknzxSww4IiRsoCXl_C6NFrmHe8=" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="progress-bar video-progress" style="width: 90%;background-color: rgba(218, 100, 32, 0.781);" data-skill="MongoDB 90%"></div>
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </div>
     </section>
-    
-    <div class="container my-5">
-        <h2 class="text-center mb-4" style="color: #c6fd00;">Contact Me</h2>
-        <p class="text-center mb-5" style="color: #ffffff; font-size: 1.1rem;">
-            I would love to hear from you! Feel free to reach out via email or find me at my location in Tokyo.
-        </p>
-    
-        <div class="row">
-            <div class="col-md-6 mb-4 contact-container">
-                <h5>Get in Touch</h5>
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+    </div>
+    <br>
+    <Hr><!-- Interactive Timeline Section -->
+        <div class="timeline-container">
+            <h2 class="timeline-title">Career Journey</h2>
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-date">2001</h3>
+                        <h4 class="timeline-title">Began Web Development</h4>
+                        <p class="timeline-description">Started learning HTML, CSS, and JavaScript, building small personal projects to hone my skills.</p>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-date">2001</h3>
+                        <h4 class="timeline-title">Joined Wikimedia Foundation</h4>
+                        <p class="timeline-description">Became a key developer for Wikimedia, contributing to various projects and enhancing the platform’s capabilities.</p>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                </div>
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-date">2001</h3>
+                        <h4 class="timeline-title">Worked with Microsoft</h4>
+                        <p class="timeline-description">Collaborated on projects as a lead developer, focusing on improving user experience and software functionality.</p>
                     </div>
-                    <button type="submit" class="btn btn-primary" onclick="sendEmail()">
-                        Submit
-                    </button>
-                </form>
+                </div>
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-date">2010</h3>
+                        <h4 class="timeline-title">Contributed to OpenAI</h4>
+                        <p class="timeline-description">Engaged in early development phases, contributing to machine learning projects and artificial intelligence innovations.</p>
+                    </div>
+                </div>
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-date">2012</h3>
+                        <h4 class="timeline-title">Joined Tesla</h4>
+                        <p class="timeline-description">Worked on software development for Tesla’s vehicle systems, enhancing performance and user interaction.</p>
+                    </div>
+                </div>
+                <!-- Timeline Item 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-date">2023</h3>
+                        <h4 class="timeline-title">Current Projects</h4>
+                        <p class="timeline-description">Continuing to develop cutting-edge technologies and innovative solutions across various domains.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+</br>
+    <!-- HTML Online Compiler Section -->
+<div class="compiler-container">
+    <h2 class="compiler-title">HTML Online Compiler</h2>
+    <p class="compiler-subtitle">Write HTML code and see the output below!</p>
+
+    <div class="editor-preview-wrapper">
+        <!-- Code Editor -->
+        <textarea id="codeEditor" class="code-editor" placeholder="Write your HTML code here..."></textarea>
+
+        <!-- Live Preview -->
+        <iframe id="livePreview" class="live-preview" style="color: red;"></iframe>
+    </div>
+
+    <!-- Run Button -->
+    <button class="run-btn" onclick="runCode()">Run Code</button>
 </div>
-<hr>
-                <footer style="background-color: rgba(255, 0, 0, 0.298);" class="footer bg-dark text-white py-4">
-                    <div class="container text-center" >
-                        <h5 class="mb-3" style="color: gold;">Connect with Me</h5>
-                        <div class="social-icons mb-3">
-                            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-white mx-2">
-                                <i class="fab fa-linkedin fa-2x"></i>
-                            </a>
-                            <a href="https://github.com/yourprofile" target="_blank" class="text-white mx-2">
-                                <i class="fab fa-github fa-2x"></i>
-                            </a>
-                            <a href="https://twitter.com/yourprofile" target="_blank" class="text-white mx-2">
-                                <i class="fab fa-twitter fa-2x"></i>
-                            </a>
-                            <a href="https://www.instagram.com/yourprofile" target="_blank" class="text-white mx-2">
-                                <i class="fab fa-instagram fa-2x"></i>
-                            </a>
-                        </div>
-                        <div class="map-container">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.10140514564!2d139.69170631525834!3d35.68948792410527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd8b84f5a6d%3A0x374458ad845aa032!2sTokyo%20Tower!5e0!3m2!1sen!2sjp!4v1628947694008!5m2!1sen!2sjp" 
-                                width="100%" 
-                                height="300" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy">
-                            </iframe>
-                        </div>
-                        <p class="mb-0" style="font-size: 0.9rem;">© 2024 Poonam Kshatriya. All Rights Reserved.</p>
-                        <p style="font-size: 0.9rem;">Passionate Full Stack Developer | Exploring the world of technology.</p>
-                    </div>
-                </footer>
+
     
+
+
+
+<hr><footer style="background-color: rgba(255, 0, 0, 0.298);" class="footer bg-dark text-white py-4">
+    <div class="container text-center">
+        <h5 class="mb-3" style="color: gold;">Connect with Me</h5>
+        <div class="social-icons mb-3">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-white mx-2">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://github.com/yourprofile" target="_blank" class="text-white mx-2">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank" class="text-white mx-2">
+                <i class="fab fa-twitter fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank" class="text-white mx-2">
+                <i class="fab fa-instagram fa-2x"></i>
+            </a>
+        </div>
+
+        <div class="map-container mb-4">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.10140514564!2d139.69170631525834!3d35.68948792410527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd8b84f5a6d%3A0x374458ad845aa032!2sTokyo%20Tower!5e0!3m2!1sen!2sjp!4v1628947694008!5m2!1sen!2sjp" 
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="container my-5" id="contact">
+            <h2 class="text-center mb-4" style="color: #c6fd00;">Contact Me</h2>
+            <p class="text-center mb-5" style="color: #ffffff; font-size: 1.1rem;">
+                I would love to hear from you! Feel free to reach out via email or find me at my location in Tokyo.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6 mb-4 contact-container" >
+                    <h5>Get in Touch</h5>
+                    <form onsubmit="sendEmail(event)">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <p class="mb-0" style="font-size: 0.9rem;">© 2024 Poonam Kshatriya. All Rights Reserved.</p>
+        <p style="font-size: 0.9rem;">Passionate Full Stack Developer | Exploring the world of technology.</p>
+    </div>
+</footer>
+
       
-<script type="text/javascript" src = "Index.js"></script>
+<script type="text/javascript" src = "index.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- JavaScript to Handle Code Execution and CodeMirror Initialization -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/xml/xml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/show-hint.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/html-hint.min.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 </body>
 </html>
