@@ -511,6 +511,39 @@ background: linear-gradient(153deg, rgba(0,245,255,1) 33%, rgba(238,155,155,1) 6
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/show-hint.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/html-hint.min.js"></script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        function showAlert() {
+        alert("Try Again Later, Currently Servers are off");
+    }
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    function runCode() {
+        const code = document.getElementById("codeEditor").value;
+        const previewFrame = document.getElementById("livePreview").contentWindow.document;
+        previewFrame.open();
+        previewFrame.write(`<style>body { color: red; }</style>` + code);  // Applying red color to text
+        previewFrame.close();
+    }
+// Toggle the FAB menu
+function sendEmail(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // Construct the mailto link
+    const mailtoLink = `mailto:tanishkshatriya9@gmail.com?subject=Message from ${name}&body=${message} (Reply to: ${email})`;
+
+    // Open the user's email client
+    window.location.href = mailtoLink;
+}
+// Toggle the FAB menu
+document.querySelector('.fab-main').addEventListener('click', function() {
+    document.querySelector('.fab-container').classList.toggle('open');
+});
+    </script>
 </body>
 </body>
 </html>
