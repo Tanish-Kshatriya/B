@@ -71,17 +71,7 @@ background: linear-gradient(153deg, rgba(0,245,255,1) 33%, rgba(238,155,155,1) 6
         </div>
       </nav>
       <!-- Floating Action Button (FAB) and Quick Links -->
-<div class="fab-container">
-    <button class="fab-main">
-        <i class="fas fa-plus"></i>
-    </button>
-    <div class="fab-links">
-        <a href="#home" class="fab-link" title="Home"><i class="fas fa-home"></i></a>
-        <a href="#about" class="fab-link" title="About Me"><i class="fas fa-user"></i></a>
-        <a href="#projects" class="fab-link" title="Projects"><i class="fas fa-briefcase"></i></a>
-        <a href="#contact" class="fab-link" title="Contact"><i class="fas fa-envelope"></i></a>
-    </div>
-</div>
+
 
       <div class="jumbotron text-center" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: #fff; padding: 80px 20px; border-radius: 12px; position: relative; overflow: hidden;">
         <!-- Background animation circles -->
@@ -539,10 +529,6 @@ function sendEmail(event) {
     // Open the user's email client
     window.location.href = mailtoLink;
 }
-// Toggle the FAB menu
-document.querySelector('.fab-main').addEventListener('click', function() {
-    document.querySelector('.fab-container').classList.toggle('open');
-});
         import { Talk } from "talkjs";
 
 await Talk.ready;
