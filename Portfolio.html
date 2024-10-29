@@ -543,6 +543,16 @@ function sendEmail(event) {
 document.querySelector('.fab-main').addEventListener('click', function() {
     document.querySelector('.fab-container').classList.toggle('open');
 });
+        import { Talk } from "talkjs";
+
+await Talk.ready;
+
+const me = new Talk.User("sample_user_alice");
+const session = new Talk.Session({ appId: "til3rhrq", me });
+
+const chatbox = session.createChatbox();
+chatbox.select("sample_conversation");
+chatbox.mount(document.getElementById("talkjs-container"));
     </script>
 </body>
 </body>
