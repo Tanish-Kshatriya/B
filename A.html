@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine File Access</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #343a40;
+            padding: 1rem 0;
+            color: #f8f9fa;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #343a40;
+            padding: 1rem 0;
+            color: #f8f9fa;
+            text-align: center;
+            font-size: 0.9rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Main Password Prompt */
+        #mainPasswordPrompt {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+
+        /* Folder cards styling */
+        .card {
+            background-color: #1d1f21;
+            border: 1px solid #444;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: #f8f9fa;
+            margin-bottom: 1rem;
+        }
+
+        /* Buttons and Inputs */
+        .form-control {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555;
+        }
+
+        .btn-primary {
+            background-color: #6a11cb;
+            border: none;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #8c3fcb;
+        }
+
+        /* Section Headers */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #f8f9fa;
+        }
+
+        /* Folder content styling */
+        .hidden-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .hidden-content ul li a {
+            color: #76b3fd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .hidden-content ul li a:hover {
+            color: #b6d0ff;
+        }
+        
+        /* Hide folder content by default */
+        .hidden-content {
+            display: none;
+        }
+
+        /* Error Message Styling */
+        .error-message {
+            color: #ff3333;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* Search Bar Styling */
+        .search-bar {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div>Radiology Department File Access</div>
+</header>
+
+<!-- Main Password Prompt -->
+<div id="mainPasswordPrompt">
+    <h2>Welcome to the Radiology Department File Access</h2>
+    <p>Please enter the main password to continue.</p>
+    <input type="password" id="mainPasswordInput" class="form-control w-25 mx-auto text-center" placeholder="Password">
+    <button class="btn btn-primary mt-3" onclick="checkMainPassword()">Submit</button>
+    <p id="mainErrorMessage" class="error-message"></p>
+    <button class="btn btn-link mt-2" onclick="resetPasswordPrompt()">Forgot Password?</button>
+</div>
+
+<!-- Main Content -->
+<div id="mainContent" class="container my-5" style="display:none;">
+    <h2 class="text-center section-title">Machine File Access</h2>
+
+    <!-- Search Bar -->
+    <input type="text" class="form-control w-50 mx-auto search-bar" id="folderSearch" onkeyup="searchFolders()" placeholder="Search Folders">
+
+    <!-- Folder List -->
+    <div id="folders" class="row">
+        <!-- MRI Folder -->
+        <div class="col-md-4 mb-4 folder-card" id="folder-mri">
+            <div class="card p-3">
+                <div class="card-body text-center">
+                    <i class="fas fa-brain fa-3x mb-3 text-primary"></i>
+                    <h5 class="card-title">MRI Folder</h5>
+                    <div id="mriPasswordPrompt">
+                        <input type="password" class="form-control mb-2" id="mriPasswordInput" placeholder="Folder Password">
+                        <button class="btn btn-primary w-100" onclick="checkPassword('MRI', 'mriPasswordInput', 'mriContent')">Access</button>
+                        <p id="mriError" class="error-message"></p>
+                    </div>
+                    <div id="mriContent" class="hidden-content">
+                        <ul>
+                            <li><a href="https://example.com/mri1" target="_blank">MRI File 1</a></li>
+                            <li><a href="https://example.com/mri2" target="_blank">MRI File 2</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CT Scan Folder -->
+        <div class="col-md-4 mb-4 folder-card" id="folder-ct">
+            <div class="card p-3">
+                <div class="card-body text-center">
+                    <i class="fas fa-x-ray fa-3x mb-3 text-info"></i>
+                    <h5 class="card-title">CT Scan Folder</h5>
+                    <div id="ctPasswordPrompt">
+                        <input type="password" class="form-control mb-2" id="ctPasswordInput" placeholder="Folder Password">
+                        <button class="btn btn-primary w-100" onclick="checkPassword('CT', 'ctPasswordInput', 'ctContent')">Access</button>
+                        <p id="ctError" class="error-message"></p>
+                    </div>
+                    <div id="ctContent" class="hidden-content">
+                        <ul>
+                            <li><a href="https://example.com/ct1" target="_blank">CT Scan File 1</a></li>
+                            <li><a href="https://example.com/ct2" target="_blank">CT Scan File 2</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- X-Ray Folder -->
+        <div class="col-md-4 mb-4 folder-card" id="folder-xray">
+            <div class="card p-3">
+                <div class="card-body text-center">
+                    <i class="fas fa-radiation fa-3x mb-3 text-warning"></i>
+                    <h5 class="card-title">X-Ray Folder</h5>
+                    <div id="xrayPasswordPrompt">
+                        <input type="password" class="form-control mb-2" id="xrayPasswordInput" placeholder="Folder Password">
+                        <button class="btn btn-primary w-100" onclick="checkPassword('XRAY', 'xrayPasswordInput', 'xrayContent')">Access</button>
+                        <p id="xrayError" class="error-message"></p>
+                    </div>
+                    <div id="xrayContent" class="hidden-content">
+                        <ul>
+                            <li><a href="https://example.com/xray1" target="_blank">X-Ray File 1</a></li>
+                            <li><a href="https://example.com/xray2" target="_blank">X-Ray File 2</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <button class="btn btn-danger mt-3" onclick="logout()">Logout</button>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div>Website made with love by Tanish Kshatriya</div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+    function checkMainPassword() {
+        const mainPassword = "AIIMS";
+        const enteredPassword = document.getElementById('mainPasswordInput').value;
+        const mainErrorMessage = document.getElementById('mainErrorMessage');
+        const mainContent = document.getElementById('mainContent');
+        const mainPasswordPrompt = document.getElementById('mainPasswordPrompt');
+
+        if (enteredPassword === mainPassword) {
+            mainPasswordPrompt.style.display = 'none';
+            mainContent.style.display = 'block';
+        } else {
+            mainErrorMessage.textContent = 'Incorrect main password. Access denied.';
+        }
+    }
+
+    function checkPassword(folder, inputId, contentId) {
+        const passwords = {
+            "MRI": "MRIPASS",
+            "CT": "CTPASS",
+            "XRAY": "XRAYPASS",
+            "ULTRASOUND": "USPASS",
+            "MAMMOGRAPHY": "MAMMO",
+            "PET": "PETPASS"
+        };
+
+        const enteredPassword = document.getElementById(inputId).value;
+        const correctPassword = passwords[folder];
+        const errorMessage = document.getElementById(folder.toLowerCase() + "Error");
+        const content = document.getElementById(contentId);
+        const passwordPrompt = document.getElementById(folder.toLowerCase() + "PasswordPrompt");
+
+        if (enteredPassword === correctPassword) {
+            passwordPrompt.style.display = 'none';
+            content.style.display = 'block';
+        } else {
+            errorMessage.textContent = 'Incorrect password. Please try again.';
+        }
+    }
+
+    // Password reset (simple)
+    function resetPasswordPrompt() {
+        alert("Password reset functionality is under development.");
+    }
+
+    // Logout function
+    function logout() {
+        document.getElementById('mainPasswordPrompt').style.display = 'block';
+        document.getElementById('mainContent').style.display = 'none';
+    }
+
+    // Search folders
+    function searchFolders() {
+        const input = document.getElementById("folderSearch");
+        const filter = input.value.toUpperCase();
+        const folders = document.getElementsByClassName("folder-card");
+        
+        for (let i = 0; i < folders.length; i++) {
+            const folderTitle = folders[i].getElementsByClassName("card-title")[0].textContent;
+            if (folderTitle.toUpperCase().includes(filter)) {
+                folders[i].style.display = "";
+            } else {
+                folders[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+<!-- Bootstrap JS and FontAwesome -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
