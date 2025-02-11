@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCI (AIIMS)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000000;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .slideshow-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: linear-gradient(135deg, #000000, #001);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 5%;
+            transform: scale(0.8);
+            transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: radial-gradient(circle at center, transparent, rgba(0, 0, 0, 0));
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .content-wrapper {
+            position: relative;
+            width: 90%;
+            max-width: 1400px;
+            padding: 2rem;
+            border-radius: 20px;
+            background: transparent !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgb(255, 255, 255);
+            box-shadow: 0 0 27px rgba(0, 204, 255, 0.986);
+        }
+
+        h1 {
+            font-size: 4vw;
+            margin-bottom: 3vh;
+            background: linear-gradient(45deg, #00ff37, #ff5100);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 0, 0, 0);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInDown 2.7s forwards;
+            animation-delay: 0.5s;
+        }
+
+        p {
+            font-size: 1.6vw;
+            line-height: 1.8;
+            margin-bottom: 2vh;
+            background: linear-gradient(270deg, #10e669, #ffffffc2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 0.8s;
+        }
+
+        p:last-child {
+            animation-delay: 1.1s;
+        }
+
+        @keyframes fadeInDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(0, 247, 255, 0.5);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+            }
+            100% {
+                transform: translateY(-100px) scale(1);
+            }
+        }
+
+        .logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 2vw;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgb(0, 247, 255);
+            background: transparent;
+            z-index: 100;
+            background: linear-gradient(45deg, #00ff00, #00d9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff0000, #00b7ff);
+            width: 0%;
+            transition: width 0.3s linear;
+            z-index: 100;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.322) 0%, transparent 20%);
+            transform: translate(-50%, -50%);
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+
+    <pre><div class="logo">// - National Cancer Institute - // </div></pre>
+    <div class="progress-bar"></div>
+    <div class="particles"></div>
+    <div class="slideshow-container">
+        <div class="slide active">
+            <div class="content-wrapper">
+                <pre><h1>Welcome to NCI (AIIMS)</h1></pre>
+                <hr>
+                <br>
+                <p>Leading Cancer Treatment & Research</p>
+                <hr>
+                <br>
+                <p>The National Cancer Institute (NCI) at AIIMS is a world-class center dedicated to cutting-edge cancer treatment, groundbreaking research, and patient-centric care. Our goal is to eradicate cancer through innovation, awareness, and advanced medical expertise.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h1>What is Cancer?</h1>
+                <p>Cancer is the uncontrolled growth of abnormal cells in the body. It can affect any organ and spread rapidly if not treated.</p>
+                <hr>
+                <br><p>There are over 100 types of cancer, each classified based on the affected organ or type of cell. Some cancers grow slowly, while others are highly aggressive. Understanding the nature of cancer helps in early detection and effective treatment.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h1>Early Symptoms</h1>
+                <p>Symptoms include unexplained weight loss, persistent fatigue, lumps or swelling, prolonged pain, and unusual bleeding.</p>
+                <hr>
+                <br><p>Other warning signs may include chronic cough, difficulty swallowing, persistent indigestion, changes in bowel or bladder habits, skin changes, and non-healing sores. Early detection significantly improves survival rates.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h1>Types of Cancer</h1>
+                <p>Common types include lung cancer, breast cancer, leukemia, prostate cancer, and skin cancer.</p>
+                <hr>
+                <br><p>Other prevalent cancers include colorectal cancer, pancreatic cancer, cervical cancer, liver cancer, and brain tumors. Each type has unique symptoms, risk factors, and treatment options.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h1>Prevention Strategies</h1>
+                <p>Adopting a healthy lifestyle, avoiding tobacco, maintaining a balanced diet, and undergoing regular screenings can reduce the risk of cancer.</p>
+                <hr>
+                <br><p>Additional strategies include regular physical activity, maintaining a healthy weight, limiting alcohol consumption, protecting skin from excessive sun exposure, and getting vaccinated against cancer-related viruses such as HPV and Hepatitis B.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h1>Treatment Options</h1>
+                <p>Treatments include chemotherapy, radiation therapy, surgery, targeted therapy, and immunotherapy, depending on the type and stage of cancer.</p>
+                <hr>
+                <br><p>Newer treatments include CAR-T cell therapy, hormone therapy, bone marrow transplantation, and proton therapy. Multidisciplinary approaches ensure personalized treatment plans tailored to each patient's needs.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h1>Advanced Cancer Research</h1>
+                <p>NCI (AIIMS) is at the forefront of research, developing innovative treatments such as gene therapy, personalized medicine, and artificial intelligence for early diagnosis.</p>
+                <hr>
+                <br><p>Our ongoing research focuses on cancer genomics, immuno-oncology, bioinformatics, and nanotechnology-based drug delivery systems. We collaborate with international institutions to push the boundaries of cancer care.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h1>Survivor Stories</h1>
+                <p>Thousands of patients have successfully battled cancer through early diagnosis and advanced treatments at NCI (AIIMS).</p>
+                <hr>
+                <br><p>Read inspiring real-life stories of individuals who overcame cancer with resilience and determination. Their journeys highlight the importance of hope, early intervention, and comprehensive medical support.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h1>Support & Care</h1>
+                <p>NCI (AIIMS) provides psychological support, rehabilitation, and palliative care for cancer patients and their families.</p>
+                <hr>
+                <br><p>Our services include counseling, nutrition guidance, pain management, support groups, and holistic therapies to improve the quality of life during and after treatment.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h1>Join the Fight Against Cancer</h1>
+                <p>Be a part of the mission—spread awareness, support cancer research, and encourage early screenings to save lives.</p>
+                <hr>
+                <br><p>Participate in cancer awareness campaigns, donate to research initiatives, volunteer at support groups, or advocate for improved healthcare policies. Together, we can make a difference.</p>
+            </div>
+        </div>
+        
+        <div class="slide">
+    <div class="content-wrapper">
+        <h1>Understanding Tumors</h1>
+        <p>Not all tumors are cancerous. Benign tumors do not spread, while malignant tumors can invade other tissues.</p>
+        <hr>
+                <br><p>Identifying whether a tumor is benign or malignant is crucial for treatment. Regular check-ups and imaging tests help in early detection and management.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Risk Factors</h1>
+        <p>Common risk factors include smoking, poor diet, exposure to harmful chemicals, and genetic predisposition.</p>
+        <hr>
+                <br><p>Other factors include prolonged sun exposure, radiation, obesity, chronic infections, and sedentary lifestyles. Understanding risks helps in prevention.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Importance of Early Screening</h1>
+        <p>Screening tests like mammograms, colonoscopies, and Pap smears help detect cancer at an early, treatable stage.</p>
+        <hr>
+                <br><p>Regular health check-ups and self-examinations can improve early detection rates, significantly increasing survival chances.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Role of Genetics</h1>
+        <p>Some cancers run in families. Genetic counseling can help assess the risk of hereditary cancers.</p>
+        <hr>
+                <br><p>BRCA1 and BRCA2 gene mutations increase the risk of breast and ovarian cancers. Genetic testing helps in proactive prevention and treatment strategies.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Myths & Facts</h1>
+        <p>Myth: Cancer is always fatal. Fact: Many cancers are treatable and even curable when detected early.</p>
+        <hr>
+                <br><p>Myth: Sugar feeds cancer. Fact: While a healthy diet is essential, sugar itself does not directly cause cancer growth.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Nutrition & Cancer</h1>
+        <p>A diet rich in fruits, vegetables, whole grains, and lean proteins can lower cancer risk.</p>
+        <hr>
+                <br><p>Antioxidants, vitamins, and minerals support the immune system, helping the body fight abnormal cell growth effectively.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Innovative Cancer Treatments</h1>
+        <p>Advancements like precision medicine, nanotechnology, and immunotherapy are revolutionizing cancer treatment.</p>
+        <hr>
+                <br><p>New research focuses on targeted drug delivery, reducing side effects while enhancing treatment efficacy.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Emotional Well-being</h1>
+        <p>Cancer diagnosis can be overwhelming. Psychological support and counseling play a vital role in healing.</p>
+        <hr>
+                <br><p>Support groups, meditation, therapy, and mindfulness practices can help patients and families navigate challenges with strength.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Palliative & Hospice Care</h1>
+        <p>For advanced cancer, palliative care focuses on pain relief, symptom management, and quality of life.</p>
+        <hr>
+                <br><p>Hospice care provides compassionate end-of-life support for patients and families, ensuring dignity and comfort.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Global Cancer Awareness</h1>
+        <p>World Cancer Day, observed on February 4th, emphasizes global efforts in cancer prevention, research, and treatment.</p>
+        <hr>
+                <br><p>Raising awareness, advocating for better healthcare policies, and funding research contribute to a world with better cancer care.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Lifestyle Choices</h1>
+        <p>Regular exercise, a healthy diet, and avoiding tobacco significantly lower cancer risks.</p>
+        <hr>
+                <br><p>Positive lifestyle changes boost immunity, support mental well-being, and prevent chronic illnesses, including cancer.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Cancer and the Immune System</h1>
+        <p>The immune system plays a critical role in fighting cancer. Strengthening it can aid in prevention and recovery.</p>
+        <hr>
+                <br><p>Immunotherapy harnesses the body’s defense mechanisms to target and destroy cancer cells effectively.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Breakthroughs in Oncology</h1>
+        <p>Recent discoveries in stem cell research, AI diagnostics, and precision medicine are transforming cancer care.</p>
+        <hr>
+                <br><p>Ongoing clinical trials test innovative drugs and therapies, offering new hope for patients worldwide.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Understanding Metastasis</h1>
+        <p>Metastasis occurs when cancer cells spread from the primary site to other parts of the body through the bloodstream or lymphatic system.</p>
+        <hr>
+                <br><p>Common metastatic sites include the lungs, liver, bones, and brain. Early detection of metastasis can significantly impact treatment success and patient outcomes.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Common Risk Factors</h1>
+        <p>Risk factors for cancer include smoking, excessive alcohol consumption, obesity, exposure to radiation, and family history.</p>
+        <hr>
+                <br><p>Other risk factors include chronic infections, exposure to harmful chemicals, prolonged inflammation, and unhealthy dietary habits. Reducing exposure to these factors lowers cancer risk.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Genetics & Cancer</h1>
+        <p>Some cancers are hereditary, passed down through generations due to genetic mutations.</p>
+        <hr>
+                <br><p>Genetic testing can help identify individuals at higher risk, enabling preventive measures and early interventions to reduce the likelihood of cancer development.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Importance of Screening</h1>
+        <p>Regular screenings, such as mammograms, Pap smears, colonoscopies, and PSA tests, help detect cancer early when it is most treatable.</p>
+        <hr>
+                <br><p>Early detection through screenings improves survival rates and allows for less aggressive treatment options, minimizing side effects and complications.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Nutrition & Cancer</h1>
+        <p>A balanced diet rich in fruits, vegetables, whole grains, and lean proteins helps reduce cancer risk and supports recovery.</p>
+        <hr>
+                <br><p>Avoiding processed foods, excessive sugar, and unhealthy fats can lower inflammation and improve overall health, creating a stronger immune system to fight cancer.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Immunotherapy & Future Treatments</h1>
+        <p>Immunotherapy harnesses the body's immune system to target and destroy cancer cells more effectively.</p>
+        <hr>
+                <br><p>Future treatments include CRISPR-based gene editing, nanoparticle drug delivery, and AI-driven personalized medicine to revolutionize cancer care.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Cancer in Children</h1>
+        <p>Childhood cancers are rare but require specialized treatments, including targeted therapies and minimally invasive procedures.</p>
+        <hr>
+                <br><p>Common types include leukemia, brain tumors, and neuroblastoma. Early diagnosis and advanced treatment options have significantly improved survival rates in pediatric oncology.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Exercise & Cancer Prevention</h1>
+        <p>Regular physical activity reduces cancer risk by improving immunity, maintaining a healthy weight, and regulating hormones.</p>
+        <hr>
+                <br><p>Even moderate activities like walking, cycling, or yoga can help lower inflammation and boost energy levels, aiding in cancer prevention and recovery.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Palliative Care & Quality of Life</h1>
+        <p>Palliative care focuses on relieving symptoms, managing pain, and improving the overall well-being of cancer patients.</p>
+        <hr>
+                <br><p>It includes psychological support, complementary therapies, and personalized medical interventions to enhance comfort and dignity during treatment.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Advances in Early Detection</h1>
+        <p>Cutting-edge technologies such as liquid biopsies, AI-powered imaging, and biomarkers enable earlier and more precise cancer detection.</p>
+        <hr>
+                <br><p>These innovations allow for timely intervention, reducing mortality rates and improving patient outcomes with targeted treatment plans.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Stages of Cancer</h1>
+        <p>Cancer is classified into stages 0 to IV, based on tumor size and spread.</p>
+        <hr>
+                <br><p>Early-stage cancer (Stage 0-I) is often more treatable, while advanced stages (III-IV) require aggressive treatment.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Common Cancer Treatments</h1>
+        <p>Treatment depends on the type and stage of cancer and may include surgery, radiation, chemotherapy, or targeted therapy.</p>
+        <hr>
+                <br><p>New approaches like immunotherapy and precision medicine are improving survival rates and reducing side effects.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Immunotherapy</h1>
+        <p>Immunotherapy boosts the body’s natural defenses to fight cancer.</p>
+        <hr>
+                <br><p>It includes checkpoint inhibitors, CAR-T cell therapy, and cancer vaccines, offering promising results in many cases.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Chemotherapy</h1>
+        <p>Chemotherapy uses drugs to kill cancer cells or stop their growth.</p>
+        <hr>
+                <br><p>It is often used in combination with other treatments and may cause temporary side effects like fatigue and nausea.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Radiation Therapy</h1>
+        <p>Radiation therapy uses high-energy rays to destroy cancer cells.</p>
+        <hr>
+                <br><p>It is targeted to minimize damage to surrounding healthy tissues and can be used alone or with other treatments.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Surgical Oncology</h1>
+        <p>Surgery is a primary treatment for many cancers, especially when detected early.</p>
+        <hr>
+                <br><p>It aims to remove tumors and affected tissues while preserving organ function when possible.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Targeted Therapy</h1>
+        <p>Targeted therapy blocks specific molecules involved in cancer growth.</p>
+        <hr>
+                <br><p>Unlike chemotherapy, it focuses on cancer cells, reducing damage to normal cells and lowering side effects.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Hormone Therapy</h1>
+        <p>Hormone therapy is used for hormone-sensitive cancers like breast and prostate cancer.</p>
+        <hr>
+                <br><p>It helps block or lower hormone levels to slow or stop cancer growth.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Role of Exercise</h1>
+        <p>Regular physical activity reduces the risk of cancer and improves treatment outcomes.</p>
+        <hr>
+                <br><p>Exercise helps manage side effects, boosts mood, and enhances overall well-being.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Cancer in Children</h1>
+        <p>Common childhood cancers include leukemia, brain tumors, and lymphoma.</p>
+        <hr>
+                <br><p>Early diagnosis and specialized treatment increase survival rates in pediatric oncology.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Side Effects Management</h1>
+        <p>Cancer treatments may cause side effects like nausea, fatigue, or hair loss.</p>
+        <hr>
+                <br><p>Supportive care and medications help manage symptoms, improving quality of life.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Alternative & Complementary Therapies</h1>
+        <p>Some patients explore acupuncture, herbal medicine, or meditation alongside conventional treatments.</p>
+        <hr>
+                <br><p>Always consult a doctor before using alternative therapies to ensure safety and effectiveness.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Importance of Mental Health</h1>
+        <p>Cancer can impact mental well-being, leading to anxiety and depression.</p>
+        <hr>
+                <br><p>Counseling, mindfulness, and support groups help patients cope with emotional challenges.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Diet During Cancer Treatment</h1>
+        <p>A balanced diet supports the immune system and helps manage treatment side effects.</p>
+        <hr>
+                <br><p>Foods rich in proteins, vitamins, and antioxidants aid recovery and energy levels.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Personalized Medicine</h1>
+        <p>Advancements in genomics allow for tailored cancer treatments.</p>
+        <hr>
+                <br><p>Precision medicine improves treatment success while minimizing side effects.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <hr>
+        <br>
+        <pre><h1>// 🔴 CristoPhorus // </h1></pre>
+        <br>
+        <hr>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Cancer Awareness Campaigns</h1>
+        <p>Raising awareness about prevention and early detection saves lives.</p>
+        <hr>
+                <br><p>Regular screenings and healthy lifestyle choices reduce cancer risk significantly.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Breakthrough in Cancer Vaccines</h1>
+        <p>Cancer vaccines, like HPV and Hepatitis B vaccines, prevent certain cancers.</p>
+        <hr>
+                <br><p>Research is underway for therapeutic vaccines to treat existing cancers.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Global Cancer Statistics</h1>
+        <p>Over 19 million new cancer cases are diagnosed globally each year.</p>
+        <hr>
+                <br><p>Early detection and advanced treatments are improving survival rates worldwide.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Future of Cancer Treatment</h1>
+        <p>AI, nanotechnology, and gene editing are shaping the future of cancer care.</p>
+        <hr>
+                <br><p>Innovative therapies offer new hope for better outcomes and fewer side effects.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Role of AI in Cancer Diagnosis</h1>
+        <p>Artificial intelligence is revolutionizing cancer detection through early and precise diagnosis.</p>
+        <hr>
+                <br><p>AI-powered imaging, pathology analysis, and predictive analytics improve accuracy and speed in identifying cancerous cells.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>CRISPR and Gene Editing</h1>
+        <p>CRISPR technology offers hope for gene-based cancer treatments.</p>
+        <hr>
+                <br><p>It allows precise modifications in DNA to potentially eliminate cancer-causing mutations.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Nanotechnology in Cancer Therapy</h1>
+        <p>Nanoparticles are being used for targeted drug delivery to destroy cancer cells with minimal side effects.</p>
+        <hr>
+                <br><p>Research in nanomedicine is making treatments more effective and less toxic.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>CyberKnife Technology</h1>
+        <p>CyberKnife provides non-invasive, highly accurate radiation therapy.</p>
+        <hr>
+                <br><p>It reduces damage to surrounding tissues and offers a painless alternative to traditional radiation.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Liquid Biopsy</h1>
+        <p>Liquid biopsies allow for non-invasive cancer detection using blood samples.</p>
+        <hr>
+                <br><p>This emerging technology helps in early detection and monitoring of cancer progression.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Cancer Vaccines</h1>
+        <p>Vaccines like HPV and Hepatitis B help prevent specific types of cancer.</p>
+        <hr>
+                <br><p>Research is ongoing to develop therapeutic vaccines that treat cancer post-diagnosis.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Telemedicine for Cancer Care</h1>
+        <p>Telemedicine enables remote consultations and follow-ups for cancer patients.</p>
+        <hr>
+                <br><p>This improves accessibility, especially for those in rural or underserved areas.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Stem Cell Therapy in Cancer Treatment</h1>
+        <p>Stem cell transplants help regenerate healthy blood cells after chemotherapy.</p>
+        <hr>
+                <br><p>This is particularly useful for treating leukemia and lymphoma.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Integrative Oncology</h1>
+        <p>Integrative oncology combines conventional and complementary therapies.</p>
+        <hr>
+                <br><p>It includes acupuncture, meditation, and dietary strategies to improve patient well-being.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Global Cancer Research Initiatives</h1>
+        <p>International collaborations drive progress in cancer treatment and prevention.</p>
+        <hr>
+                <br><p>Projects like The Cancer Genome Atlas (TCGA) provide valuable insights into genetic mutations.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Cancer Prevention Guidelines</h1>
+        <p>Following WHO-recommended guidelines reduces the risk of cancer.</p>
+        <hr>
+                <br><p>Avoiding tobacco, limiting alcohol, and staying active are key preventive measures.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Managing Cancer-Related Fatigue</h1>
+        <p>Cancer patients often experience severe fatigue due to treatments.</p>
+        <hr>
+                <br><p>Proper nutrition, exercise, and rest can help improve energy levels.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Genetic Testing for Cancer Risk</h1>
+        <p>Genetic tests help identify individuals at high risk for hereditary cancers.</p>
+        <hr>
+                <br><p>Early knowledge allows for preventive actions like lifestyle changes or medical interventions.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Importance of Cancer Registries</h1>
+        <p>National cancer registries collect data to improve research and treatment strategies.</p>
+        <hr>
+                <br><p>These databases help identify trends and develop effective public health policies.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Artificial Organs for Cancer Patients</h1>
+        <p>Bioengineered organs may replace cancer-damaged tissues in the future.</p>
+        <hr>
+                <br><p>Advancements in tissue engineering are bringing artificial organ transplants closer to reality.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Environmental Factors</h1>
+        <p>Exposure to air pollution, chemicals, and radiation increases cancer risks.</p>
+        <hr>
+                <br><p>Reducing environmental hazards can significantly lower global cancer cases.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>AI-Powered Drug Discovery</h1>
+        <p>Machine learning algorithms accelerate the development of new cancer drugs.</p>
+        <hr>
+                <br><p>AI helps identify potential drug candidates faster than traditional methods.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Psychological Impact of Cancer</h1>
+        <p>Patients often experience depression and anxiety after diagnosis.</p>
+        <hr>
+                <br><p>Counseling, therapy, and peer support groups improve mental well-being.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Breakthroughs in Radiotherapy</h1>
+        <p>Proton beam therapy and adaptive radiation therapy enhance precision.</p>
+        <hr>
+                <br><p>These innovations minimize damage to healthy tissues while targeting tumors.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Personalized Cancer Vaccines</h1>
+        <p>Scientists are developing vaccines customized to individual cancer patients.</p>
+        <hr>
+                <br><p>These vaccines train the immune system to recognize and destroy cancer cells.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Challenges in Global Cancer Treatment</h1>
+        <p>Developing nations face disparities in access to cancer care.</p>
+        <hr>
+                <br><p>Efforts to improve healthcare infrastructure are crucial for reducing mortality.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Survival Rates and Advancements</h1>
+        <p>Early-stage cancer patients have significantly higher survival rates.</p>
+        <hr>
+                <br><p>Innovations in therapy are continuously improving life expectancy.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Cancer Biomarkers</h1>
+        <p>Biomarkers help in detecting and monitoring cancer progression.</p>
+        <hr>
+                <br><p>Liquid biopsy-based biomarker tests are becoming more common in diagnostics.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Diet on Cancer Recovery</h1>
+        <p>Proper nutrition helps boost immunity and support recovery.</p>
+        <hr>
+                <br><p>Antioxidant-rich foods and balanced meals aid in cancer treatment.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Radiomics in Cancer Imaging</h1>
+        <p>Radiomics extracts advanced data from medical imaging scans.</p>
+        <hr>
+                <br><p>This helps in predicting tumor behavior, treatment response, and early diagnosis.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Cancer and Gut Microbiome</h1>
+        <p>Recent research suggests gut bacteria influence cancer risk and treatment response.</p>
+        <hr>
+                <br><p>Probiotics and dietary changes may play a role in cancer prevention and recovery.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Precision Oncology</h1>
+        <p>Personalized cancer treatments based on genetic profiling are improving outcomes.</p>
+        <hr>
+                <br><p>These therapies target specific mutations unique to an individual's cancer.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Artificial Blood for Cancer Patients</h1>
+        <p>Researchers are developing artificial blood to help cancer patients with anemia.</p>
+        <hr>
+                <br><p>This could be life-saving for those undergoing chemotherapy.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>AI in Drug Repurposing</h1>
+        <p>AI identifies existing drugs that can be repurposed for cancer treatment.</p>
+        <hr>
+                <br><p>This speeds up the discovery process and makes treatments more affordable.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Air Pollution on Cancer</h1>
+        <p>Studies link air pollution to increased lung and other cancers.</p>
+        <hr>
+                <br><p>Reducing exposure to pollutants can lower cancer risk.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Advances in Leukemia Treatment</h1>
+        <p>CAR-T cell therapy has revolutionized blood cancer treatment.</p>
+        <hr>
+                <br><p>Targeted therapies are providing better survival rates with fewer side effects.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Epigenetics and Cancer</h1>
+        <p>Epigenetic changes influence how genes express in cancer development.</p>
+        <hr>
+                <br><p>New treatments aim to reverse harmful epigenetic modifications.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Cancer Immunosurveillance</h1>
+        <p>The immune system constantly monitors and destroys cancer cells.</p>
+        <hr>
+                <br><p>Some cancers evade this defense, making immunotherapy crucial.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Bioelectronic Medicine</h1>
+        <p>Bioelectronic devices are being explored for pain relief and tumor suppression.</p>
+        <hr>
+                <br><p>These devices stimulate nerves to modulate the immune response.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Role of Fasting in Cancer Therapy</h1>
+        <p>Fasting and calorie restriction are being studied for cancer prevention.</p>
+        <hr>
+                <br><p>They may improve chemotherapy effectiveness while protecting normal cells.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Wearable Technology in Cancer Care</h1>
+        <p>Smartwatches and wearables monitor patient vitals in real-time.</p>
+        <hr>
+                <br><p>This helps in early detection of complications and improving treatment outcomes.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>3D Printing in Oncology</h1>
+        <p>3D-printed models assist in surgical planning for complex cancer cases.</p>
+        <hr>
+                <br><p>Bioprinting may eventually create tissue for cancer reconstruction.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Targeting Cancer Stem Cells</h1>
+        <p>Cancer stem cells drive tumor growth and recurrence.</p>
+        <hr>
+                <br><p>New drugs are being developed to eliminate these resilient cells.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Sleep on Cancer Risk</h1>
+        <p>Poor sleep habits are linked to increased cancer risk.</p>
+        <hr>
+                <br><p>Good sleep supports immune function and overall health.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Artificial Intelligence in Radiation Therapy</h1>
+        <p>AI is improving radiation targeting and reducing side effects.</p>
+        <hr>
+                <br><p>It helps optimize treatment plans for better patient outcomes.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Plant-Based Compounds in Cancer Treatment</h1>
+        <p>Natural plant compounds like curcumin and resveratrol show anti-cancer properties.</p>
+        <hr>
+                <br><p>Scientists are researching their potential in new drug formulations.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Nanobots in Cancer Therapy</h1>
+        <p>Microscopic robots could one day deliver drugs directly to tumors.</p>
+        <hr>
+                <br><p>This technology aims to improve precision while minimizing side effects.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Personalized Exercise Plans for Cancer Patients</h1>
+        <p>Exercise routines tailored to cancer patients improve recovery.</p>
+        <hr>
+                <br><p>Physical activity helps reduce fatigue and improves overall well-being.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>AI-Powered Cancer Risk Calculators</h1>
+        <p>AI models predict individual cancer risks based on genetics and lifestyle.</p>
+        <hr>
+                <br><p>These tools help in early intervention and prevention strategies.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Space Medicine and Cancer Research</h1>
+        <p>Studies in space help understand how cancer cells behave in microgravity.</p>
+        <hr>
+                <br><p>This research contributes to new treatment innovations.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <hr>
+        <br>
+        <pre><h1>// 🔴 CristoPhorus // </h1></pre>
+        <br>
+        <hr>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Cancer Treatment Accessibility</h1>
+        <p>Efforts are being made to provide affordable cancer treatment worldwide.</p>
+        <hr>
+                <br><p>Technology and policy changes are improving global healthcare access.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Artificial Intelligence in Cancer Surgery</h1>
+        <p>AI-assisted robotic surgery enhances precision and reduces recovery time.</p>
+        <hr>
+                <br><p>Minimally invasive procedures improve patient outcomes.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Social Support on Cancer Recovery</h1>
+        <p>Emotional and social support is crucial for cancer patients.</p>
+        <hr>
+                <br><p>Strong networks improve mental health and treatment adherence.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Stress on Cancer</h1>
+        <p>Chronic stress can weaken the immune system, increasing cancer risk.</p>
+        <hr>
+                <br><p>Managing stress through mindfulness, therapy, and exercise can improve overall health.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Role of Hydration in Cancer Prevention</h1>
+        <p>Drinking enough water helps flush toxins from the body.</p>
+        <hr>
+                <br><p>Proper hydration supports cell function and overall well-being.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Biomarker Testing in Cancer Diagnosis</h1>
+        <p>Biomarkers help detect cancer early and guide personalized treatment.</p>
+        <hr>
+                <br><p>New blood tests can identify cancer before symptoms appear.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Robotic Surgery in Cancer Treatment</h1>
+        <p>Robotic-assisted surgeries provide greater precision and quicker recovery.</p>
+        <hr>
+                <br><p>This technology reduces surgical complications and improves outcomes.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Cannabis in Cancer Care</h1>
+        <p>Medical cannabis is being researched for pain relief and nausea control.</p>
+        <hr>
+                <br><p>It may also have anti-tumor properties in some cancer types.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Blood Donations and Cancer Patients</h1>
+        <p>Many cancer patients rely on blood transfusions during treatment.</p>
+        <hr>
+                <br><p>Regular blood donation can help save lives.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Exercise for Cancer Survivors</h1>
+        <p>Physical activity improves quality of life after cancer treatment.</p>
+        <hr>
+                <br><p>It reduces fatigue, boosts mental health, and lowers recurrence risk.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Role of Artificial Organs in Cancer Recovery</h1>
+        <p>Scientists are developing artificial organs to replace cancer-damaged tissues.</p>
+        <hr>
+                <br><p>These breakthroughs could transform post-cancer rehabilitation.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Gene Therapy for Cancer</h1>
+        <p>Gene therapy modifies or replaces faulty genes to treat cancer.</p>
+        <hr>
+                <br><p>It has the potential to create more targeted and effective treatments.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Vitamin D on Cancer Prevention</h1>
+        <p>Vitamin D plays a role in reducing the risk of several cancers.</p>
+        <hr>
+                <br><p>Safe sun exposure and supplementation help maintain healthy levels.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Effect of Smoking on Cancer</h1>
+        <p>Smoking is the leading cause of preventable cancer worldwide.</p>
+        <hr>
+                <br><p>Quitting smoking significantly reduces cancer risk at any age.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Early Signs of Pediatric Cancer</h1>
+        <p>Symptoms like persistent fever, fatigue, and unusual bruising can indicate childhood cancers.</p>
+        <hr>
+                <br><p>Early diagnosis greatly improves survival rates in children.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Sugar on Cancer</h1>
+        <p>High sugar consumption may contribute to cancer risk by fueling inflammation.</p>
+        <hr>
+                <br><p>A balanced diet helps regulate blood sugar and overall health.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Role of Diet in Breast Cancer Prevention</h1>
+        <p>Foods rich in antioxidants and fiber lower breast cancer risk.</p>
+        <hr>
+                <br><p>Avoiding processed foods and unhealthy fats is crucial.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Innovations in Bone Cancer Treatment</h1>
+        <p>Advancements in limb-sparing surgeries and targeted drugs improve survival rates.</p>
+        <hr>
+                <br><p>New therapies focus on preserving mobility and function.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>How Sleep Affects Cancer Recovery</h1>
+        <p>Poor sleep weakens the immune system and impacts healing.</p>
+        <hr>
+                <br><p>Good sleep hygiene supports cancer treatment and recovery.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>AI in Cancer Detection</h1>
+        <p>AI is enhancing early cancer detection through advanced imaging.</p>
+        <hr>
+                <br><p>Machine learning helps identify cancerous tissues more accurately.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Role of Telehealth in Cancer Treatment</h1>
+        <p>Telemedicine allows remote consultations for cancer patients.</p>
+        <hr>
+                <br><p>It improves access to specialists and continuity of care.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Processed Foods on Cancer</h1>
+        <p>Processed meats and ultra-processed foods may increase cancer risk.</p>
+        <hr>
+                <br><p>Whole, natural foods support a healthier lifestyle.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Advances in Liver Cancer Treatment</h1>
+        <p>New targeted therapies and immunotherapies improve outcomes.</p>
+        <hr>
+                <br><p>Early detection is key to effective liver cancer treatment.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Artificial Intelligence in Tumor Analysis</h1>
+        <p>AI is revolutionizing tumor grading and classification.</p>
+        <hr>
+                <br><p>It enhances precision in cancer diagnosis and treatment planning.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Role of Spirituality in Cancer Healing</h1>
+        <p>Spiritual practices can provide emotional strength to cancer patients.</p>
+        <hr>
+                <br><p>Mindfulness, prayer, and meditation aid mental well-being.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Importance of Sun Protection</h1>
+        <p>Overexposure to UV rays increases skin cancer risk.</p>
+        <hr>
+                <br><p>Using sunscreen and wearing protective clothing is essential.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Genetics on Cancer Treatment</h1>
+        <p>Genetic testing helps doctors choose the most effective treatments for patients.</p>
+        <hr>
+                <br><p>Understanding a patient’s DNA can improve therapy success rates.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Artificial Intelligence in Cancer Screening</h1>
+        <p>AI is revolutionizing early cancer detection by analyzing medical images.</p>
+        <hr>
+                <br><p>It helps doctors identify cancerous cells faster and with higher accuracy.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Breakthroughs in Skin Cancer Treatment</h1>
+        <p>New immunotherapies are improving survival rates for melanoma patients.</p>
+        <hr>
+                <br><p>Targeted therapies are helping prevent recurrence of aggressive skin cancers.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Stress on Cancer Progression</h1>
+        <p>Chronic stress can weaken the immune system, making cancer more aggressive.</p>
+        <hr>
+                <br><p>Mindfulness and relaxation techniques help reduce stress and support recovery.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Bioengineering Tumor Models</h1>
+        <p>Scientists are creating 3D-printed tumors to test new cancer treatments.</p>
+        <hr>
+                <br><p>These models help researchers find the most effective drug combinations.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>The Future of Cancer Surgery</h1>
+        <p>Minimally invasive robotic surgeries are improving patient outcomes.</p>
+        <hr>
+                <br><p>New techniques allow for quicker recovery and reduced complications.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Gut Health on Cancer</h1>
+        <p>The gut microbiome influences how the body responds to cancer treatments.</p>
+        <hr>
+                <br><p>Probiotics and a healthy diet can help improve gut health and immunity.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Global Cancer Trends</h1>
+        <p>By 2040, cancer cases are expected to rise due to lifestyle changes.</p>
+        <hr>
+                <br><p>Preventive measures and early detection can reduce global cancer rates.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Liquid Metal Robots in Cancer Therapy</h1>
+        <p>Scientists are developing shape-shifting robots to target cancer cells.</p>
+        <hr>
+                <br><p>These robots may revolutionize drug delivery in the future.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Superfoods for Cancer Prevention</h1>
+        <p>Foods rich in antioxidants, such as berries and green tea, can reduce cancer risk.</p>
+        <hr>
+                <br><p>A nutrient-dense diet supports overall health and immunity.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Climate Change and Cancer</h1>
+        <p>Pollution and environmental toxins increase cancer risks globally.</p>
+        <hr>
+                <br><p>Efforts to reduce air pollution can lower cancer rates in affected regions.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Smart Drug Delivery Systems</h1>
+        <p>Nanotechnology is improving how chemotherapy drugs target cancer cells.</p>
+        <hr>
+                <br><p>This reduces side effects while increasing treatment effectiveness.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>AI Chatbots for Cancer Patients</h1>
+        <p>AI-powered chatbots provide cancer patients with real-time support.</p>
+        <hr>
+                <br><p>These tools offer guidance on symptoms, treatments, and side effects.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Radiation-Free Cancer Treatments</h1>
+        <p>New therapies aim to eliminate tumors without using radiation.</p>
+        <hr>
+                <br><p>Scientists are exploring ultrasound and electromagnetic wave treatments.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Bioluminescence in Cancer Research</h1>
+        <p>Scientists use glowing proteins to track cancer cell movement in the body.</p>
+        <hr>
+                <br><p>This helps researchers develop better treatments for aggressive cancers.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Cold Therapy for Cancer</h1>
+        <p>Cryotherapy is being used to freeze and destroy cancer cells.</p>
+        <hr>
+                <br><p>It is a promising alternative to surgery for some types of tumors.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>How Virtual Reality Helps Cancer Patients</h1>
+        <p>VR therapy is helping cancer patients cope with pain and anxiety.</p>
+        <hr>
+                <br><p>It provides immersive experiences that aid relaxation and mental well-being.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Artificial Intelligence in Cancer Drug Testing</h1>
+        <p>AI is speeding up clinical trials by predicting drug effectiveness.</p>
+        <hr>
+                <br><p>This innovation reduces the time it takes to bring new treatments to market.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Future of AI in Oncology</h1>
+        <p>AI is expected to play a major role in predicting and treating cancer.</p>
+        <hr>
+                <br><p>Machine learning models are improving diagnostic accuracy worldwide.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>How Space Research Helps Cancer Treatment</h1>
+        <p>Studies in microgravity are providing new insights into how cancer cells grow.</p>
+        <hr>
+                <br><p>NASA is collaborating with medical researchers to find innovative treatments.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Music Therapy on Cancer Patients</h1>
+        <p>Music therapy is used to reduce stress and improve emotional well-being.</p>
+        <hr>
+                <br><p>Studies show it helps cancer patients cope with pain and anxiety.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Role of Stem Cells in Cancer Research</h1>
+        <p>Stem cells are being used to regenerate damaged tissues after cancer treatment.</p>
+        <hr>
+                <br><p>They also help scientists understand cancer development at a cellular level.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>How AI is Improving Cancer Pathology</h1>
+        <p>AI-powered systems can detect cancerous cells in biopsy samples with high accuracy.</p>
+        <hr>
+                <br><p>These tools help doctors make faster, more precise diagnoses.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Impact of Pollution on Cancer Rates</h1>
+        <p>Air and water pollution contribute to rising cancer rates worldwide.</p>
+        <hr>
+                <br><p>Efforts to reduce exposure to carcinogens can help lower cancer risks.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>3D Bioprinting for Cancer Treatment</h1>
+        <p>Scientists are developing 3D-printed tissues to test cancer drugs more efficiently.</p>
+        <hr>
+                <br><p>This technology could revolutionize personalized cancer treatment.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>How AI Predicts Cancer Risk</h1>
+        <p>AI algorithms analyze genetic and lifestyle data to estimate cancer risk.</p>
+        <hr>
+                <br><p>These models help doctors recommend preventive measures for high-risk patients.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Understanding Rare Childhood Cancers</h1>
+        <p>Some rare pediatric cancers require specialized treatments and research.</p>
+        <hr>
+                <br><p>Advancements in gene therapy are offering new hope for young patients.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>Artificial Intelligence in Radiology</h1>
+        <p>AI is helping radiologists detect tumors in X-rays and MRIs more effectively.</p>
+        <hr>
+                <br><p>This technology is improving early detection rates and treatment success.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>How Blockchain Can Improve Cancer Research</h1>
+        <p>Blockchain technology is being used to secure and share medical research data.</p>
+        <hr>
+                <br><p>It ensures transparency, security, and collaboration in global cancer studies.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <h1>AI-Powered Personalized Cancer Treatment Plans</h1>
+        <p>AI is helping doctors create treatment plans tailored to each patient’s unique biology.</p>
+        <hr>
+                <br><p>This approach increases the effectiveness of therapy while reducing side effects.</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="content-wrapper">
+        <hr>
+        <br>
+        <pre><h1>// 🔴 CristoPhorus // </h1></pre>
+        <br>
+        <hr>
+    </div>
+</div>
+
+    </div>
+
+    <script>
+        // Create floating particles
+        const particlesContainer = document.querySelector('.particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDelay = `${Math.random() * 20}s`;
+            particle.style.opacity = Math.random();
+            particlesContainer.appendChild(particle);
+        }
+
+        // Slideshow functionality
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.querySelector('.progress-bar');
+        let currentSlide = 0;
+
+        function showSlide() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide].classList.add('active');
+            
+            // Update progress bar
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            currentSlide = (currentSlide + 1) % slides.length;
+        }
+
+        // Initial slide
+        showSlide();
+        // Change slide every 15 seconds
+        setInterval(showSlide, 15000);
+    </script>
+</body>
+</html>
