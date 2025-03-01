@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCI (AIIMS)</title>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #8b4141;
+    color: #fff;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.slideshow-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(135deg, #000000, #001);
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5%;
+    transform: translate3d(0, 0, -100px) rotateX(10deg);
+    transition: all 1.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    will-change: transform, opacity;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotateX(0);
+}
+
+.slide.previous {
+    transform: translate3d(-100%, 0, -50px) rotateX(-5deg);
+}
+
+.slide.next {
+    transform: translate3d(100%, 0, -50px) rotateX(5deg);
+}
+
+.content-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 1400px;
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 204, 255, 0.2);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.content-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(0, 204, 255, 0.4);
+}
+
+h1 {
+    font-size: 4vw;
+    margin-bottom: 3vh;
+    background: linear-gradient(45deg, #00ff37, #ff5100);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInDown 1.2s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    animation-delay: 0.3s;
+}
+
+p {
+    font-size: 1.6vw;
+    line-height: 1.8;
+    margin-bottom: 2vh;
+    background: linear-gradient(270deg, #10e669, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.2s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    animation-delay: 0.6s;
+}
+
+p:last-child {
+    animation-delay: 0.9s;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.particle {
+    position: absolute;
+    background: linear-gradient(45deg, rgb(0, 255, 30), rgba(255, 0, 0, 0.57));
+    border-radius: 100%;
+    filter: blur(1px);
+    animation: float 15s infinite;
+}
+
+.particle:nth-child(odd) {
+    width: 4px;
+    height: 4px;
+    animation-duration: 20s;
+}
+
+.particle:nth-child(even) {
+    width: 6px;
+    height: 6px;
+    animation-duration: 25s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(100px) scale(1);
+        opacity: 0;
+    }
+}
+
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 2vw;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(0, 247, 255, 0.5);
+    z-index: 100;
+    background: linear-gradient(45deg, #00ff00, #00d9ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px rgba(0, 247, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 30px rgba(0, 247, 255, 0.8);
+    }
+}
+
+.progress-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 15px;
+    background: linear-gradient(90deg, #ff0000, #00b7ff);
+    width: 0%;
+    transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(255, 0, 242, 0.508);
+}
+
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    animation: pulse 6s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
+}
+</style>
+</head>
+<body>
+
+    <pre><div class="logo">// - National Cancer Institute - // </div></pre>
+    <div class="progress-bar"></div>
+    <div class="particles"></div>
+    <div class="slideshow-container">
+        <div class="slide active">
+            <div class="content-wrapper">
+                <pre><h1>Congratulations, Dr. Sanjay Thulkar!</h1></pre>
+                <hr>
+                <br>
+              
+                
+                <p>Heartfelt congratulations on your well-deserved promotion to Chief of IRCH and your appointment as Head of the Department of Diagnostic and Interventional Oncology-Radiology.
+
+Your exceptional leadership, guidance, and mentorship continue to inspire us all. We are grateful for your invaluable contributions and wish you continued success in this new role.</p>
+           <hr>
+                <br> </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        // Create floating particles
+        const particlesContainer = document.querySelector('.particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDelay = `${Math.random() * 20}s`;
+            particle.style.opacity = Math.random();
+            particlesContainer.appendChild(particle);
+        }
+
+        // Slideshow functionality
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.querySelector('.progress-bar');
+        let currentSlide = 0;
+
+        function showSlide() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide].classList.add('active');
+            
+            // Update progress bar
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            currentSlide = (currentSlide + 1) % slides.length;
+        }
+
+        // Initial slide
+        showSlide();
+        // Change slide every 15 seconds
+        setInterval(showSlide, 15000);
+    </script>
+</body>
+</html>
